@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculator</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript">
+      function displayValue(text) {
+        document.getElementById("result").value += text;
+      }
+
+      function clearScreen() {
+        document.getElementById("result").value = "";
+      }
+
+      function solve() {
+        let x = document.getElementById("result").value;
+
+        let y = eval(x);
+
+        document.getElementById("result").value = y;
+
+        return y;
+      }
+
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <table>
+        <tr>
+          <td colspan="3">
+            <input type="text" id="result" disabled placeholder="0" />
+          </td>
+          <td colspan="1">
+            <button value="7" onclick="clearScreen()">c</button>
+          </td>
+        </tr>
+        <tr>
+          <td><button value="7" onclick="displayValue(7)">7</button></td>
+          <td><button value="8" onclick="displayValue(8)">8</button></td>
+          <td><button value="9" onclick="displayValue(9)">9</button></td>
+          <td><button value="/" onclick="displayValue('/')">÷</button></td>
+        </tr>
+        <tr>
+          <td><button value="4" onclick="displayValue(4)">4</button></td>
+          <td><button value="5" onclick="displayValue(5)">5</button></td>
+          <td><button value="6" onclick="displayValue(6)">6</button></td>
+          <td><button value="-" onclick="displayValue('-')">-</button></td>
+        </tr>
+        <tr>
+          <td><button value="1" onclick="displayValue(1)">1</button></td>
+          <td><button value="2" onclick="displayValue(2)">2</button></td>
+          <td><button value="3" onclick="displayValue(3)">3</button></td>
+          <td><button value="+" onclick="displayValue('+')">+</button></td>
+        </tr>
+        <tr>
+          <td><button value="%" onclick="displayValue('%')">%</button></td>
+          <td><button value="0" onclick="displayValue(0)">0</button></td>
+          <td><button value="." onclick="displayValue('.')">.</button></td>
+          <td><button value="=" onclick="solve()">=</button></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
